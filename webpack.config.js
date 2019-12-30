@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: join(__dirname, 'dist'),
     publicPath: '/dist/',
-    filename: 'index.js'
+    filename: 'bundle.js'
   },
   resolve: {
     extensions: ['.js']
