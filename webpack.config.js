@@ -1,11 +1,11 @@
 const { join } = require('path');
 
 module.exports = {
-  entry: join(__dirname, '/app/base-style-class.js'),
+  entry: join(__dirname, '/src/index.js'),
   output: {
     path: join(__dirname, 'dist'),
     publicPath: '/dist/',
-    filename: 'base-style.js'
+    filename: 'index.js'
   },
   resolve: {
     extensions: ['.js']

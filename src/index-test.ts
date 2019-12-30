@@ -1,5 +1,5 @@
 import { Classes, Styles } from 'jss';
-import { BaseStyle } from './base-style-class';
+import { BaseStyle } from './index';
 
 describe('testing the BaseStyle class', () => {
   let baseStyle: BaseStyle;

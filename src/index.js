@@ -37,4 +37,4 @@ var BaseStyle = /** @class */ (function () {
     return BaseStyle;
 }());
 exports.BaseStyle = BaseStyle;
-//# sourceMappingURL=base-style-class.js.map
+//# sourceMappingURL=index.js.map

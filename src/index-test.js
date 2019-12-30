@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var base_style_class_1 = require("./base-style-class");
+var index_1 = require("./index");
 describe('testing the BaseStyle class', function () {
     var baseStyle;
     var style;
     var classes;
     beforeAll(function () {
-        baseStyle = base_style_class_1.BaseStyle.getInstance({});
+        baseStyle = index_1.BaseStyle.getInstance({});
         style = {
             testClass: {
                 backgroundColor: 'red'
@@ -22,4 +22,4 @@ describe('testing the BaseStyle class', function () {
         expect(classes.testClass).toContain('testClass');
     });
 });
-//# sourceMappingURL=base-style-test.js.map
+//# sourceMappingURL=index-test.js.map

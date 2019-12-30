@@ -81,22 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./app/base-style/base-style-class.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./app/base-style/base-style-class.js":
-/*!********************************************!*\
-  !*** ./app/base-style/base-style-class.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar tslib_1 = __webpack_require__(/*! tslib */ \"./node_modules/tslib/tslib.es6.js\");\n\nvar jss_1 = __webpack_require__(/*! jss */ \"./node_modules/jss/dist/jss.esm.js\");\n\nvar jss_plugin_camel_case_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-camel-case */ \"./node_modules/jss-plugin-camel-case/dist/jss-plugin-camel-case.esm.js\"));\n\nvar jss_plugin_global_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-global */ \"./node_modules/jss-plugin-global/dist/jss-plugin-global.esm.js\"));\n\nvar jss_plugin_nested_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-nested */ \"./node_modules/jss-plugin-nested/dist/jss-plugin-nested.esm.js\"));\n\nvar jss_preset_default_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-preset-default */ \"./node_modules/jss-preset-default/dist/jss-preset-default.esm.js\"));\n\nvar BaseStyle =\n/** @class */\nfunction () {\n  function BaseStyle(generalStyles) {\n    this.classes = {};\n    this.jss = jss_1.create();\n    this.jss.setup(jss_preset_default_1[\"default\"]());\n    this.jss.use(jss_plugin_camel_case_1[\"default\"](), jss_plugin_global_1[\"default\"](), jss_plugin_nested_1[\"default\"]());\n    this.classes = this.createAndAttachStyleSheet(generalStyles);\n  }\n\n  BaseStyle.getInstance = function (generalStyles) {\n    this.instance = new BaseStyle(generalStyles);\n    return this.instance;\n  };\n\n  BaseStyle.prototype.getGeneralClasses = function () {\n    return this.classes;\n  };\n\n  BaseStyle.prototype.createAndAttachStyleSheet = function (styles) {\n    if (styles) {\n      this.styleSheet = this.jss.createStyleSheet(styles);\n      this.styleSheet.attach();\n      return this.styleSheet.classes;\n    }\n\n    return {};\n  };\n\n  BaseStyle.prototype.create = function (styles) {\n    var componentClasses = this.createAndAttachStyleSheet(styles);\n    var generalClasses = this.getGeneralClasses();\n    return tslib_1.__assign(tslib_1.__assign({}, componentClasses), generalClasses);\n  };\n\n  return BaseStyle;\n}();\n\nexports.BaseStyle = BaseStyle;\n\n//# sourceURL=webpack:///./app/base-style/base-style-class.js?");
-
-/***/ }),
 
 /***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js":
 /*!**********************************************************************!*\
@@ -477,6 +465,18 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, exports) {
 
 eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpackPolyfill) {\n\t\tvar module = Object.create(originalModule);\n\t\t// module.parent = undefined by default\n\t\tif (!module.children) module.children = [];\n\t\tObject.defineProperty(module, \"loaded\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.l;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"id\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.i;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"exports\", {\n\t\t\tenumerable: true\n\t\t});\n\t\tmodule.webpackPolyfill = 1;\n\t}\n\treturn module;\n};\n\n\n//# sourceURL=webpack:///(webpack)/buildin/harmony-module.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar tslib_1 = __webpack_require__(/*! tslib */ \"./node_modules/tslib/tslib.es6.js\");\n\nvar jss_1 = __webpack_require__(/*! jss */ \"./node_modules/jss/dist/jss.esm.js\");\n\nvar jss_plugin_camel_case_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-camel-case */ \"./node_modules/jss-plugin-camel-case/dist/jss-plugin-camel-case.esm.js\"));\n\nvar jss_plugin_global_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-global */ \"./node_modules/jss-plugin-global/dist/jss-plugin-global.esm.js\"));\n\nvar jss_plugin_nested_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-nested */ \"./node_modules/jss-plugin-nested/dist/jss-plugin-nested.esm.js\"));\n\nvar jss_preset_default_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-preset-default */ \"./node_modules/jss-preset-default/dist/jss-preset-default.esm.js\"));\n\nvar BaseStyle =\n/** @class */\nfunction () {\n  function BaseStyle(generalStyles) {\n    this.classes = {};\n    this.jss = jss_1.create();\n    this.jss.setup(jss_preset_default_1[\"default\"]());\n    this.jss.use(jss_plugin_camel_case_1[\"default\"](), jss_plugin_global_1[\"default\"](), jss_plugin_nested_1[\"default\"]());\n    this.classes = this.createAndAttachStyleSheet(generalStyles);\n  }\n\n  BaseStyle.getInstance = function (generalStyles) {\n    this.instance = new BaseStyle(generalStyles);\n    return this.instance;\n  };\n\n  BaseStyle.prototype.getGeneralClasses = function () {\n    return this.classes;\n  };\n\n  BaseStyle.prototype.createAndAttachStyleSheet = function (styles) {\n    if (styles) {\n      this.styleSheet = this.jss.createStyleSheet(styles);\n      this.styleSheet.attach();\n      return this.styleSheet.classes;\n    }\n\n    return {};\n  };\n\n  BaseStyle.prototype.create = function (styles) {\n    var componentClasses = this.createAndAttachStyleSheet(styles);\n    var generalClasses = this.getGeneralClasses();\n    return tslib_1.__assign(tslib_1.__assign({}, componentClasses), generalClasses);\n  };\n\n  return BaseStyle;\n}();\n\nexports.BaseStyle = BaseStyle;\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
