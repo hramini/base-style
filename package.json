@@ -1,14 +1,16 @@
 {
-  "name": "react-tdd",
+  "name": "base-style",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "unpkg": "./dist/bundle.js",
   "scripts": {
     "tsc": "tsc",
     "webpack": "webpack-cli --config webpack.config.js",
     "test": "jest --watchAll"
   },
-  "author": "",
+  "author": "hramini",
   "license": "ISC",
   "dependencies": {
     "babel-loader": "8.0.6",
