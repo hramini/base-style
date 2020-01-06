@@ -468,6 +468,18 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 
 /***/ }),
 
+/***/ "./src/base/base-style-class.js":
+/*!**************************************!*\
+  !*** ./src/base/base-style-class.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar BaseStyle =\n/** @class */\nfunction () {\n  function BaseStyle(styleClass) {\n    this.styleClass = styleClass;\n  }\n\n  BaseStyle.prototype.addStyles = function (styles) {\n    this.styleClass.addStyles(styles);\n  };\n\n  BaseStyle.prototype.createClasses = function () {\n    return this.styleClass.createClasses();\n  };\n\n  BaseStyle.prototype.attachToHtml = function () {\n    this.styleClass.attachToHtml();\n  };\n\n  return BaseStyle;\n}();\n\nexports.BaseStyle = BaseStyle;\n\n//# sourceURL=webpack:///./src/base/base-style-class.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -476,7 +488,19 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar tslib_1 = __webpack_require__(/*! tslib */ \"./node_modules/tslib/tslib.es6.js\");\n\nvar jss_1 = __webpack_require__(/*! jss */ \"./node_modules/jss/dist/jss.esm.js\");\n\nvar jss_plugin_camel_case_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-camel-case */ \"./node_modules/jss-plugin-camel-case/dist/jss-plugin-camel-case.esm.js\"));\n\nvar jss_plugin_global_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-global */ \"./node_modules/jss-plugin-global/dist/jss-plugin-global.esm.js\"));\n\nvar jss_plugin_nested_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-nested */ \"./node_modules/jss-plugin-nested/dist/jss-plugin-nested.esm.js\"));\n\nvar jss_preset_default_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-preset-default */ \"./node_modules/jss-preset-default/dist/jss-preset-default.esm.js\"));\n\nvar BaseStyle =\n/** @class */\nfunction () {\n  function BaseStyle(generalStyles) {\n    this.classes = {};\n    this.jss = jss_1.create();\n    this.jss.setup(jss_preset_default_1[\"default\"]());\n    this.jss.use(jss_plugin_camel_case_1[\"default\"](), jss_plugin_global_1[\"default\"](), jss_plugin_nested_1[\"default\"]());\n    this.classes = this.createAndAttachStyleSheet(generalStyles);\n  }\n\n  BaseStyle.getInstance = function (generalStyles) {\n    this.instance = new BaseStyle(generalStyles);\n    return this.instance;\n  };\n\n  BaseStyle.prototype.getGeneralClasses = function () {\n    return this.classes;\n  };\n\n  BaseStyle.prototype.createAndAttachStyleSheet = function (styles) {\n    if (styles) {\n      this.styleSheet = this.jss.createStyleSheet(styles);\n      this.styleSheet.attach();\n      return this.styleSheet.classes;\n    }\n\n    return {};\n  };\n\n  BaseStyle.prototype.create = function (styles) {\n    var componentClasses = this.createAndAttachStyleSheet(styles);\n    var generalClasses = this.getGeneralClasses();\n    return tslib_1.__assign(tslib_1.__assign({}, componentClasses), generalClasses);\n  };\n\n  return BaseStyle;\n}();\n\nexports.BaseStyle = BaseStyle;\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar base_style_class_1 = __webpack_require__(/*! ./base/base-style-class */ \"./src/base/base-style-class.js\");\n\nexports.BaseStyle = base_style_class_1.BaseStyle;\n\nvar jss_style_class_1 = __webpack_require__(/*! ./jss/jss-style-class */ \"./src/jss/jss-style-class.js\");\n\nexports.JssStyle = jss_style_class_1.JssStyle;\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/jss/jss-style-class.js":
+/*!************************************!*\
+  !*** ./src/jss/jss-style-class.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar tslib_1 = __webpack_require__(/*! tslib */ \"./node_modules/tslib/tslib.es6.js\");\n\nvar jss_1 = __webpack_require__(/*! jss */ \"./node_modules/jss/dist/jss.esm.js\");\n\nvar jss_plugin_camel_case_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-camel-case */ \"./node_modules/jss-plugin-camel-case/dist/jss-plugin-camel-case.esm.js\"));\n\nvar jss_plugin_global_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-global */ \"./node_modules/jss-plugin-global/dist/jss-plugin-global.esm.js\"));\n\nvar jss_plugin_nested_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-plugin-nested */ \"./node_modules/jss-plugin-nested/dist/jss-plugin-nested.esm.js\"));\n\nvar jss_preset_default_1 = tslib_1.__importDefault(__webpack_require__(/*! jss-preset-default */ \"./node_modules/jss-preset-default/dist/jss-preset-default.esm.js\"));\n\nvar JssStyle =\n/** @class */\nfunction () {\n  function JssStyle() {\n    this.jss = jss_1.create();\n    this.jss.setup(jss_preset_default_1[\"default\"]());\n    this.jss.use(jss_plugin_camel_case_1[\"default\"](), jss_plugin_global_1[\"default\"](), jss_plugin_nested_1[\"default\"]());\n  }\n\n  JssStyle.getInstance = function () {\n    if (!this.instance) {\n      this.instance = new JssStyle();\n    }\n\n    return this.instance;\n  };\n\n  JssStyle.prototype.addStyles = function (style) {\n    this.styles = style;\n  };\n\n  JssStyle.prototype.createClassesByStyles = function () {\n    if (this.styles) {\n      this.styleSheet = this.jss.createStyleSheet(this.styles);\n      return this.styleSheet.classes;\n    }\n\n    return {};\n  };\n\n  JssStyle.prototype.attachToHtml = function () {\n    this.styleSheet.attach();\n  };\n\n  JssStyle.prototype.getStyles = function () {\n    return this.styles;\n  };\n\n  JssStyle.prototype.getGeneralClasses = function () {\n    return this.classes;\n  };\n\n  JssStyle.prototype.setGeneralStyles = function (generalStyles) {\n    this.addStyles(generalStyles);\n    this.classes = this.createClassesByStyles();\n    this.attachToHtml();\n  };\n\n  JssStyle.prototype.createClasses = function () {\n    var generalClasses = this.getGeneralClasses();\n    var componentClasses = this.createClassesByStyles();\n    return tslib_1.__assign(tslib_1.__assign({}, componentClasses), generalClasses);\n  };\n\n  return JssStyle;\n}();\n\nexports.JssStyle = JssStyle;\n\n//# sourceURL=webpack:///./src/jss/jss-style-class.js?");
 
 /***/ })
 

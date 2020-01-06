@@ -1,12 +1,4 @@
-import { Classes, Styles } from 'jss';
-export declare class BaseStyle {
-    private jss;
-    private classes;
-    private static instance;
-    private styleSheet;
-    constructor(generalStyles: Styles);
-    static getInstance(generalStyles: Styles): BaseStyle;
-    private getGeneralClasses;
-    private createAndAttachStyleSheet;
-    create(styles: Styles): Classes;
-}
+import { BaseStyle } from './base/base-style-class';
+import { IBaseStyle, IClasses } from './base/base-style-interface';
+import { JssStyle } from './jss/jss-style-class';
+export { BaseStyle, IBaseStyle, IClasses, JssStyle };
